@@ -3,13 +3,16 @@ import { playMusic } from "./playMusic.js";
 
 const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
+const shuflleBtn = document.querySelector('.shuflle')
+let indexOfCurrentMusic = 0
+
+
 
 
 
      export function nextAndPrev(curuntMusic){
          
          
-         let indexOfCurrentMusic = 0
 
          function handelNextMusic (){
              if(indexOfCurrentMusic === musics().length -1){
@@ -42,6 +45,12 @@ const nextBtn = document.querySelector('.next')
 
         })
         nextBtn.addEventListener('click',handelNextMusic)
+
+        shuflleBtn.addEventListener('click' , ()=>{
+            indexOfCurrentMusic =   musics().findIndex((item => item.id === curuntMusic[0].id))
+            indexOfCurrentMusic = Math.random(musics())
+            console.log(indexOfCurrentMusic);
+        })
     
     }
    

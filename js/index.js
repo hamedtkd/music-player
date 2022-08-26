@@ -1,5 +1,5 @@
 import {creatFiger} from "./component/creatNewFiger.js"
-const repat  = document.querySelector('.repat ')
+const repat  = document.querySelector('.repeat ')
 repat.addEventListener('click',()=>{
     
 })

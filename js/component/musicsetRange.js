@@ -15,18 +15,18 @@ export function musicsetRange(){
          const i = (audio.currentTime/audio.duration) * 100 +"%";
         progresBarMusic.style.width = i;
     })
-    const repat  = document.querySelector('.repat ')
-    repat.addEventListener('click',()=>{
+    // const repat  = document.querySelector('.repat ')
+    // repat.addEventListener('click',()=>{
    
-        const i = progresBarMusic.style.width ="100%"
-        i=()=>{
+    //     const i = progresBarMusic.style.width ="100%"
+    //     i=()=>{
 
-            console.log("object");
-        }
+    //         console.log("object");
+    //     }
  
    
     
-    })
+    // })
    
     
 }
