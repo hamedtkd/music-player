@@ -8392,7 +8392,9 @@ border-radius: .5rem;
   --bs-text-opacity: 1;
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
-
+.text-black-2 {
+  color: #4F4F4F;
+}
 .text-white {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
@@ -11994,4 +11996,42 @@ background-repeat: no-repeat;
   /* background:linear-gradient(180deg, rgba(2, 1, 0, 0.43) 0%, rgba(2, 1, 0, 0.43) 100%),url(../images/yeganejpg.jpg) ; */
 }
 
-/*# sourceMappingURL=bootstrap.css.map */
+.progres-bg-music-bar{
+  background-color:#f1f1f1;
+  
+  height: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  border-radius: 15px;
+  }
+.progres-bg-music-bar input{
+  cursor: pointer;
+  background-color:#f1f1f1;
+
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  /* appearance: none; */
+  -webkit-appearance: none;
+  background-color: transparent;
+  width: 3px;
+  height: 1.5rem;
+  cursor: pointer;
+
+}
+.progres-bar-music{
+  pointer-events: none;
+  border-radius: 15px;
+  width: 00%;
+  background-color: rgba(255, 85, 0, 1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+
+}
+/* # sourceMappingURL=bootstrap.css.map */

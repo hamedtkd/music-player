@@ -1,6 +1,11 @@
 import {creatFiger} from "./component/creatNewFiger.js"
-const curuntMusicBg = document.querySelector('.curunt-music-bg')
-const musicCard = document.querySelector(".music-card")
+const repat  = document.querySelector('.repat ')
+repat.addEventListener('click',()=>{
+    
+})
+
+
+
 creatFiger()
 
 

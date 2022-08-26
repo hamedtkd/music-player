@@ -61,9 +61,9 @@
         </section>
         <section class="container ">
             <div class="pt-6 border-bottom d-flex justify-content-center">
-                <p class="fw-normal-b fs-0  title-sections ">Most Popular</p>
+                <p class="fw-normal-b fs-0  title-sections m-0">Most Popular</p>
             </div>
-            <div class="row">
+            <div class="flex-row row">
 
 
                 <div class="pt-5 mt-5 d-flex justify-content-around row-cols-auto flex-wrap music-cards"> 
@@ -119,9 +119,9 @@
                 </div>
             </div>
         </section>
-        <section class="container">
+        <section class="container ">
             <div class="pt-6 border-bottom  d-flex justify-content-center">
-                <p class="fw-normal-b fs-0 text-center title-sections">Current Music</p>
+                <p class="fw-normal-b fs-0 text-center title-sections m-0">Current Music</p>
             </div>
             <div class="d-flex gap-3 pt-6 ">
                 <button
@@ -137,21 +137,22 @@
                     </svg>
 
                 </button>
-                <div class="flex-grow-1">
+                <div class="flex-grow-1 ">
                     <div class="flex-column gap-3">
-                        <h3 class="fs-11 music-artist">Mohsen Yeganeh</h3>
-                        <p class="fs-4 song-name">Behet Ghol Midam</p>
+                        <h3 class="fs-11 music-artist">Artist name</h3>
+                        <p class="fs-4 song-name text-black-2">Song name</p>
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="curent-time">00:00</span>
                         <span class="overalle-time">04:00</span>
                     </div>
-                    <div>
+                    <div class="progres-bg-music-bar">
+                        <input class="music-time-range " value="0" min="0" max="10" type="range">
+                        <div class="progres-bar-music"></div>
                         <audio id="audio" src="http://dl.artmusics.top/full/Hayedeh/Best/Hayedeh%20-%20Aalam%20E%20Yekrangee.mp3"></audio>
-                        <input class="w-100" type="range">
                     </div>
                     <div class="d-flex gap-4 pt-4">
-                        <button class="border-0 bg-transparent">
+                        <button class="border-0 bg-transparent prev">
                             <svg width="18" height="35" viewBox="0 0 18 35" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -169,13 +170,17 @@
                             </svg>
 
                         </button>
-                        <button class="border-0 bg-transparent">
+                        <button class="border-0 bg-transparent next">
                             <svg width="18" height="35" viewBox="0 0 18 35" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M0.404974 0.427321C0.639435 0.180305 0.950275 0.0301173 1.28097 0.00406475C1.61166 -0.0219878 1.94025 0.0778254 2.20699 0.285355L2.36208 0.427321L17.5943 16.4714C17.8288 16.7183 17.9714 17.0457 17.9961 17.394C18.0209 17.7424 17.9261 18.0885 17.7291 18.3694L17.5943 18.5328L2.36208 34.5768C2.11468 34.8354 1.7838 34.9862 1.43548 34.9991C1.08717 35.012 0.747044 34.8861 0.482981 34.6465C0.218918 34.4069 0.0503426 34.0713 0.0109005 33.7065C-0.0285435 33.3418 0.0640469 32.9748 0.270191 32.6788L0.404974 32.5154L14.6586 17.5021L0.404974 2.48874C0.145655 2.21526 0 1.84455 0 1.45803C0 1.07151 0.145655 0.700799 0.404974 0.427321Z"
                                     fill="#4F4F4F" />
                             </svg>
+
+                        </button>
+                        <button class="border-0 bg-transparent repat">
+                            "hello"
 
                         </button>
 
@@ -185,7 +190,7 @@
         </section>
         <section class="container">
             <div class="pt-6 border-bottom  d-flex justify-content-center">
-                <p class="fw-normal-b fs-0 text-center title-sections">AboutUs</p>
+                <p class="fw-normal-b fs-0 text-center title-sections m-0">AboutUs</p>
             </div>
             <div class="d-flex gap-5 align-items-center pt-4">
                 <div>
@@ -302,7 +307,7 @@
         </section>
         <section class="container">
             <div class="pt-6 border-bottom  d-flex justify-content-center">
-                <p class="fw-normal-b fs-0 text-center title-sections">Contact Us</p>
+                <p class="fw-normal-b fs-0 text-center title-sections m-0">Contact Us</p>
             </div>
             <div class="d-flex gap-4 align-items-center">
                 <div>
