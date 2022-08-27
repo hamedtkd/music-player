@@ -63,13 +63,11 @@ export function creatFiger() {
 
                 let curuntMusic = musics().filter((item) => item.id === parseInt(songFigure.id));
 
+                nextAndPrev(curuntMusic);
                  playMusic(curuntMusic);
-                 audio.oneded= function(e){
-                    console.log("e");
-                    }
+                 
                  updateTimeUI();
                  musicsetRange();
-                 nextAndPrev(curuntMusic);
                
                 
             });

@@ -1,11 +1,10 @@
 import {creatFiger} from "./component/creatNewFiger.js"
-const repat  = document.querySelector('.repeat ')
-repat.addEventListener('click',()=>{
-    
-})
+import {voloumRange} from "./utils/voloumRange.js"
+import {handleVolumeRange} from "./component/handleVolumeRange.js"
 
 
-
+handleVolumeRange()
+voloumRange()
 creatFiger()
 
 
