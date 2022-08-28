@@ -2,7 +2,7 @@ import musics from "../../data/music.js";
 import {musicsetRange} from "../component/musicsetRange.js";
 import { playMusic } from "./playMusic.js";
 import {updateTimeUI} from "./updateTimeUI.js";
-import {nextAndPrev} from "./nextAndPrev.js";
+import {porgresbarBtns} from "./porgresbarBtns.js";
 
 const musicCards = document.querySelector(".music-cards");
 export function creatFiger() {
@@ -62,8 +62,11 @@ export function creatFiger() {
             songFigure.addEventListener('click', (e) => {
 
                 let curuntMusic = musics().filter((item) => item.id === parseInt(songFigure.id));
-
-                nextAndPrev(curuntMusic);
+                
+                
+                
+                
+                porgresbarBtns(curuntMusic);
                  playMusic(curuntMusic);
                  
                  updateTimeUI();

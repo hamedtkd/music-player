@@ -1,5 +1,7 @@
 import musics from "../../data/music.js";
 import { playMusic } from "./playMusic.js";
+import { handelDownload} from "../utils/handelDownload.js";
+
 
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
@@ -13,7 +15,7 @@ let repatState = false;
 
 
 
-     export function nextAndPrev(curuntMusic){
+     export function porgresbarBtns(curuntMusic){
        const repeatIconFalse = `<svg width="35" height="55" viewBox="0 0 55 55" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_517_93)">
@@ -97,7 +99,9 @@ let repatState = false;
 
         })
     
+        handelDownload(curuntMusic)
     }
+    
    
     
 
