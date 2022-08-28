@@ -2564,7 +2564,9 @@ textarea.form-control-lg {
 }
 
 .btn-search{
-  transform: translateX(-3rem);
+  transform: translateX(-2.9rem);
+ margin: 0.2rem 0.1rem;
+ padding: 0 0.3rem
 }
 .btn-check {
   position: absolute;
@@ -12079,6 +12081,7 @@ input[type=range]::-webkit-slider-thumb {
  border-radius: 4px;
  border: 1px solid   rgba(172, 172, 172, 1);
  box-sizing: border-box;
+ 
  
 }
 
