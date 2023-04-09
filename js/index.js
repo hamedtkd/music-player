@@ -1,6 +1,8 @@
 import {creatFiger} from "./component/creatNewFiger.js"
 import {voloumRange} from "./utils/voloumRange.js"
-import {handleVolumeRange} from "./component/handleVolumeRange.js"
+import {handleVolumeRange} from "./component/handleVolumeRange.js";
+const LastMusic  = document.querySelector('#Last-Music ');
+
 
 
 handleVolumeRange()

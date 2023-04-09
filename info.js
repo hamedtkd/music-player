@@ -39,3 +39,16 @@ Audio.onended = ()=>{
 
 
 
+// tarighe gerfna yek tad ba id va querySelector
+
+const LastMusic  = document.querySelector('#Last-Music ');
+
+
+// tarighe inke agar yekchiz false bood an ra true va agra true bood ansra false konad
+let HI = true;
+HI = !HI
+
+
+////
+
+

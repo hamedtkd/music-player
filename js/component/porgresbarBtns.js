@@ -1,22 +1,28 @@
 import musics from "../../data/music.js";
-import { playMusic } from "./playMusic.js";
-import { handelDownload} from "../utils/handelDownload.js";
+import {
+    playMusic
+} from "./playMusic.js";
+import {
+    handelDownload
+} from "../utils/handelDownload.js";
 
 
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const shuflleBtn = document.querySelector('.shuflle');
-const repat  = document.querySelector('.repeat ');
+const repat = document.querySelector('.repeat ');
+const audio = document.querySelector("#audio")
 
 let indexOfCurrentMusic = 0;
 let repatState = false;
+let handelShuflleMusic = false;
 
 
 
 
 
-     export function porgresbarBtns(curuntMusic){
-       const repeatIconFalse = `<svg width="35" height="55" viewBox="0 0 55 55" fill="none"
+export function porgresbarBtns(curuntMusic) {
+    const repeatIconFalse = `<svg width="35" height="55" viewBox="0 0 55 55" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_517_93)">
                                                 <path
@@ -32,7 +38,7 @@ let repatState = false;
                                                 </clipPath>
                                             </defs>
                                         </svg>`
-        const repeatIconTrue = `<svg width="35" height="55" viewBox="0 0 55 55" fill="none"
+    const repeatIconTrue = `<svg width="35" height="55" viewBox="0 0 55 55" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_517_93)">
             <path
@@ -48,97 +54,99 @@ let repatState = false;
             </clipPath>
         </defs>
     </svg>`
-         
 
-        repat.addEventListener('click',()=>{
-            repatState = !repatState
-            console.log(repatState);
-            if(repatState)repat.innerHTML = repeatIconTrue;
-            else{repat.innerHTML = repeatIconFalse}
-            
-        })
-         
+    const shuflleIconFalse =`  <svg width="35" height="60" viewBox="0 0 35 35" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M27.3438 20.7812L30.625 24.0625L27.3438 27.3438M27.3438 7.65625L30.625 10.9375L27.3438 14.2188M4.375 24.0625H10.1985C11.0988 24.0625 11.9851 23.8402 12.7788 23.4155C13.5725 22.9907 14.2491 22.3766 14.7485 21.6275L17.5 17.5"
+        stroke="#4F4F4F" stroke-width="2.1875" stroke-linecap="round"
+        stroke-linejoin="round" />
+    <path
+        d="M4.375 10.9375H10.1985C11.0988 10.9375 11.9851 11.1598 12.7788 11.5845C13.5725 12.0093 14.2491 12.6234 14.7485 13.3725L20.2515 21.6275C20.7509 22.3766 21.4275 22.9907 22.2212 23.4155C23.0149 23.8402 23.9012 24.0625 24.8015 24.0625H28.4375M28.4375 10.9375H24.8015C23.9012 10.9375 23.0149 11.1598 22.2212 11.5845C21.4275 12.0093 20.7509 12.6234 20.2515 13.3725L19.6875 14.2188"
+        stroke="#4F4F4F" stroke-width="2.1875" stroke-linecap="round"
+        stroke-linejoin="round" />
+</svg>`
+const shuflleIconTrue =`  <svg width="35" height="60" viewBox="0 0 35 35" fill="none"
+xmlns="http://www.w3.org/2000/svg">
+<path
+    d="M27.3438 20.7812L30.625 24.0625L27.3438 27.3438M27.3438 7.65625L30.625 10.9375L27.3438 14.2188M4.375 24.0625H10.1985C11.0988 24.0625 11.9851 23.8402 12.7788 23.4155C13.5725 22.9907 14.2491 22.3766 14.7485 21.6275L17.5 17.5"
+    stroke="#FF5500" stroke-width="2.1875" stroke-linecap="round"
+    stroke-linejoin="round" />
+<path
+    d="M4.375 10.9375H10.1985C11.0988 10.9375 11.9851 11.1598 12.7788 11.5845C13.5725 12.0093 14.2491 12.6234 14.7485 13.3725L20.2515 21.6275C20.7509 22.3766 21.4275 22.9907 22.2212 23.4155C23.0149 23.8402 23.9012 24.0625 24.8015 24.0625H28.4375M28.4375 10.9375H24.8015C23.9012 10.9375 23.0149 11.1598 22.2212 11.5845C21.4275 12.0093 20.7509 12.6234 20.2515 13.3725L19.6875 14.2188"
+    stroke="#FF5500" stroke-width="2.1875" stroke-linecap="round"
+    stroke-linejoin="round" />
+</svg>`
 
-         function handelNextMusic (){
-            if(repatState)return playMusic( [musics()[indexOfCurrentMusic]])
-             if(indexOfCurrentMusic === musics().length -1){
-                 indexOfCurrentMusic =0
-                 curuntMusic = [musics()[indexOfCurrentMusic]]
-                 playMusic(curuntMusic)
-     
-             }
-             else{
-             indexOfCurrentMusic=   musics().findIndex((item => item.id === curuntMusic[0].id))            
-             indexOfCurrentMusic++
-             curuntMusic =[musics()[indexOfCurrentMusic]]
-             playMusic(curuntMusic)}
-         }
-         audio.onended= handelNextMusic;
-         
-        prevBtn.addEventListener('click',()=>{
-            indexOfCurrentMusic =   musics().findIndex((item => item.id === curuntMusic[0].id))
-            if(indexOfCurrentMusic ===0){
-                indexOfCurrentMusic =musics().length -1;
-                curuntMusic = [musics()[indexOfCurrentMusic]]
-                playMusic(curuntMusic)
-            }
-            else{
+
+    repat.addEventListener('click', () => {
+        repatState = !repatState
+        indexOfCurrentMusic = musics().findIndex((item => item.id === curuntMusic[0].id))
+
+        handelShuflleMusic = false;
+        shuflleBtn.innerHTML = shuflleIconFalse;
+
+        if (repatState) repat.innerHTML = repeatIconTrue;
+        else { repat.innerHTML = repeatIconFalse}
+    })
+
+    function handelNextMusic() {
+        if (repatState) return playMusic([musics()[indexOfCurrentMusic]])
+        else if (indexOfCurrentMusic === musics().length - 1) {
+            indexOfCurrentMusic = 0
+            curuntMusic = [musics()[indexOfCurrentMusic]]
+            playMusic(curuntMusic)
+
+        } else {
+            indexOfCurrentMusic = musics().findIndex((item => item.id === curuntMusic[0].id))
+            indexOfCurrentMusic++
+            curuntMusic = [musics()[indexOfCurrentMusic]]
+            playMusic(curuntMusic) }
+    }
+
+
+
+    prevBtn.addEventListener('click', () => {
+        indexOfCurrentMusic = musics().findIndex((item => item.id === curuntMusic[0].id))
+        if (indexOfCurrentMusic === 0) {
+            indexOfCurrentMusic = musics().length - 1;
+            curuntMusic = [musics()[indexOfCurrentMusic]]
+            playMusic(curuntMusic)
+        } else {
 
             indexOfCurrentMusic--
-            curuntMusic =[musics()[indexOfCurrentMusic]]
+            curuntMusic = [musics()[indexOfCurrentMusic]]
             playMusic(curuntMusic)
         }
 
-        })
-        nextBtn.addEventListener('click',handelNextMusic)
+    })
+    nextBtn.addEventListener('click', handelNextMusic)
+    shuflleBtn.addEventListener('click', () => {
+        handelShuflleMusic = !handelShuflleMusic;
+        repatState = false;
+        repat.innerHTML = repeatIconFalse;
+        if (handelShuflleMusic) shuflleBtn.innerHTML = shuflleIconTrue;
+        else { shuflleBtn.innerHTML = shuflleIconFalse}
+        
+        console.log(handelShuflleMusic);
+    })
 
-        shuflleBtn.addEventListener('click' , ()=>{
-            const randomMusic = Math.floor( Math.random() * musics().length)
-            curuntMusic =[musics()[randomMusic]]
-            playMusic(curuntMusic)
-
-        })
-    
-        handelDownload(curuntMusic)
+    function handelShuflle() {
+        
+        const randomMusic = Math.floor(Math.random() * musics().length)
+        curuntMusic = [musics()[randomMusic]]
+        playMusic(curuntMusic)
     }
-    
-   
-    
+    if (handelShuflleMusic){ audio.onended = handelShuflle}
+   else{ audio.onended = handelNextMusic}
+       
+
+    handelDownload(curuntMusic)
+}
 
 
 
 
-    // function nextAndPrev(){
 
-                
-    //     let indexOfCurrentMusic = 0
-    //     prevBtn.addEventListener('click',()=>{
-    //         indexOfCurrentMusic =   musics().findIndex((item => item.id === curuntMusic[0].id))
-    //         if(indexOfCurrentMusic ===0){
-    //             indexOfCurrentMusic =musics().length -1;
-    //             console.log(indexOfCurrentMusic);
-    //             curuntMusic = [musics()[indexOfCurrentMusic]]
-    //             playMusic(curuntMusic)
-    //         }
-    //         else{
 
-    //         indexOfCurrentMusic--
-    //         curuntMusic =[musics()[indexOfCurrentMusic]]
-    //         playMusic(curuntMusic)
-    //     }
 
-    //     })
-    //     nextBtn.addEventListener('click',()=>{
-    //         if(indexOfCurrentMusic === musics().length -1){
-    //             indexOfCurrentMusic =0
-    //             curuntMusic = [musics()[indexOfCurrentMusic]]
-    //             playMusic(curuntMusic)
-
-    //         }
-    //         else{
-    //         indexOfCurrentMusic=   musics().findIndex((item => item.id === curuntMusic[0].id))            
-    //         indexOfCurrentMusic++
-    //         curuntMusic =[musics()[indexOfCurrentMusic]]
-    //         playMusic(curuntMusic)}
-    //     })
-    // }

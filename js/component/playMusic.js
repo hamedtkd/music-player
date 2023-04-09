@@ -5,6 +5,8 @@ const musicName = document.querySelector(".song-name")
 const playPause = document.querySelector("#play-pause")
 const playPausDown = document.querySelector(".playpause-icon")
 const musicTimeRange  = document.querySelector('.music-time-range ')
+const LastMusic  = document.querySelector('#Last-Music ');
+
 // const audio = document.querySelector("#audio")
 
 
@@ -18,7 +20,7 @@ export function playMusic(c){
                 musicName.innerHTML = c[0].name
                 audio.src = c[0].audio
                 musicTimeRange.max = audio.duration;
-
+                LastMusic.innerHTML = "Now You Listen"
                 audio.play().then(() => {
               
 

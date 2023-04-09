@@ -8,7 +8,7 @@ const musicCards = document.querySelector(".music-cards");
 export function creatFiger() {
 
     musics().forEach(song => {
-        const figure =`  <figure id =${song.id} class="d-flex flex-column music-card col-4 col-md-6 col-sm-12">
+        const figure =`  <figure id =${song.id} class="d-flex flex-column music-card col-lg-4 col-md-12 col-sm-12">
   <div class="music-cover d-flex justify-content-center align-items-end "style="background-image:url(${song.cover})">
       
   </div>

@@ -2563,11 +2563,7 @@ textarea.form-control-lg {
   margin-right: 1rem;
 }
 
-.btn-search{
-  transform: translateX(-2.9rem);
- margin: 0.2rem 0.1rem;
- padding: 0 0.3rem
-}
+
 .btn-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -12118,11 +12114,23 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
-hedding-btns :nth-children{
- background-color: #055160;
+.btn-search{
+  transform: translateX(-2.4rem);
+ margin: 0.2rem 0.1rem;
+ padding: 0 0.5rem;
 }
-/* .volume-range :hovered{
-  width: 20%;
+.hedding-btns :nth-child(1),.hedding-btns :nth-child(2),.hedding-btns :nth-child(3),.hedding-btns :nth-child(4){
+  padding:.2rem .5rem;
+
 }
+.hedding-btns :nth-child(1):hover,.hedding-btns :nth-child(2):hover,.hedding-btns :nth-child(3):hover,.hedding-btns :nth-child(4):hover{
+  border-radius: 4px;
+
+ background-color: rgba(33, 37, 41, 1);
+}
+
+
+
+
 
 /* # sourceMappingURL=bootstrap.css.map */
